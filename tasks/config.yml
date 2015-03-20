@@ -1,0 +1,14 @@
+---
+#
+#
+#
+
+- name: Configure New Relic Sysmond
+  template:
+    src=etc/newrelic/nrsysmond.cfg.j2
+    dest=/etc/newrelic/nrsysmond.cfg
+    owner="{{newrelic.owner}}"
+    group="{{newrelic.group}}"
+    mode='0640'
+  notify: newrelic restart
+

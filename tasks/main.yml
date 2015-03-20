@@ -1,0 +1,24 @@
+---
+#
+# New relic 
+#
+
+- include: license.yml
+  tags: nr_license
+
+- include: repository.yml
+  tags: nr_repository
+
+- include: install.yml
+  tags: nr_install
+
+- include: config.yml
+  tags: nr_config
+
+- name: Enable newrelic sysmond
+  service:
+    name=newrelic-sysmond
+    enabled=yes
+    state=started
+
+# vi:ts=2:sw=2:et:ft=yaml

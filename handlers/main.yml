@@ -1,0 +1,11 @@
+---
+
+- name: newrelic start
+  service: name=newrelic-sysmond state=started
+
+- name: newrelic stop
+  service: name=newrelic-sysmond state=stopped
+
+- name: newrelic restart
+  service: name=newrelic-sysmond state=restarted
+

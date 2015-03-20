@@ -1,0 +1,10 @@
+---
+#
+# Check license
+#
+
+- name: License check
+  fail:
+    msg: "You need to define newrelic_license_key"
+  when: newrelic_license_key == False
+
