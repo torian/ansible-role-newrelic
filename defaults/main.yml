@@ -35,4 +35,10 @@ newrelic_sysmond_labels:   false
 #
 newrelic_sysmond_service_enabled: true
 
+# NewRelic update
+#  If you want / need to upgrade the package, toggle this var
+#  to true. This should be passed as an external variable
+#
+newrelic_upgrade: false
+
 # vi:ts=2:sw=2:et:ft=yaml

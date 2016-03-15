@@ -3,6 +3,7 @@
   sudo: yes
 
   vars:
+    newrelic_test: true
     newrelic_license_key: 'abcdefghijk1234567'
 
   roles:

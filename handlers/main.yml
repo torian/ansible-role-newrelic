@@ -2,10 +2,14 @@
 
 - name: newrelic start
   service: name=newrelic-sysmond state=started
+  when: newrelic_test is not defined
 
 - name: newrelic stop
   service: name=newrelic-sysmond state=stopped
+  when: newrelic_test is not defined
 
 - name: newrelic restart
   service: name=newrelic-sysmond state=restarted
+  when: newrelic_test is not defined
+
 
