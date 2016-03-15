@@ -1,12 +1,38 @@
 ---
 
-newrelic_license_key: False
+# NewRelic License Key
+#  This should be defined on a group_vars / host and
+#  should be stored securely (vault ?)
+#  If it's not defined, the role will fail
+#
+newrelic_license_key: false
 
-newrelic_loglevel: info
-newrelic_logfile:  /var/log/newrelic/nrsysmond.log
-newrelic_ssl:      true
-newrelic_timeout:  30
+# NewRelic user and group
+#  The user and group that will run the service
+#  and own nrsysmond config file
+#
+newrelic_user:  newrelic
+newrelic_group: newrelic
 
-newrelic_labels: False
+# NewRelic sysmond config params
+#
+newrelic_sysmond_loglevel: info
+newrelic_sysmond_logfile:  /var/log/newrelic/nrsysmond.log
+newrelic_sysmond_ssl:      true
+newrelic_sysmond_timeout:  30
+newrelic_sysmond_pidfile:  /var/run/newrelic/nrsysmond.pid
+
+# Sysmond labels
+#  This will define labels for the host being monitored in NR dashboard
+#
+# newrelic_sysmond_labels:
+#   env:  production
+#   tier: webserver
+#
+newrelic_sysmond_labels:   false
+
+# Enable NewRelic sysmond at boot
+#
+newrelic_sysmond_service_enabled: true
 
 # vi:ts=2:sw=2:et:ft=yaml

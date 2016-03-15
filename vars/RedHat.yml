@@ -1,0 +1,8 @@
+---
+
+newrelic_repository_pkg: "https://yum.newrelic.com/pub/newrelic/el5/x86_64/newrelic-repo-5-3.noarch.rpm"
+
+newrelic_packages:
+  - newrelic-sysmond
+
+# vi:ts=2:sw=2:et:ft=yaml

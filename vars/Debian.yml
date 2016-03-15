@@ -1,0 +1,9 @@
+---
+
+newrelic_repository_key: https://download.newrelic.com/548C16BF.gpg
+newrelic_repository:     "http://apt.newrelic.com/debian/ newrelic non-free"
+
+newrelic_packages:
+  - newrelic-sysmond
+
+# vi:ts=2:sw=2:et:ft=yaml

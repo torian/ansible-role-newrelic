@@ -1,24 +1,19 @@
 ---
-#
-# New relic 
-#
 
-- include: license.yml
-  tags: nr_license
-
-- include: repository.yml
-  tags: nr_repository
+- name: Include OS Family vars
+  include_vars: "{{ansible_os_family}}.yml"
+  tags: always
 
 - include: install.yml
-  tags: nr_install
+  tags: newrelic_install
 
 - include: config.yml
-  tags: nr_config
+  tags: newrelic_config
 
 - name: Enable newrelic sysmond
   service:
     name=newrelic-sysmond
     enabled=yes
-    state=started
+  when: newrelic_sysmond_service_enabled
 
 # vi:ts=2:sw=2:et:ft=yaml

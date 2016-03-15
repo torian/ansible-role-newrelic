@@ -29,7 +29,7 @@ license_key={{newrelic_license_key}}
 # Default: error
 # Note   : Can also be set with the -d command line option.
 #
-loglevel={{newrelic_loglevel}}
+loglevel={{newrelic_sysmond_loglevel}}
 
 #
 # Option : logfile
@@ -39,7 +39,7 @@ loglevel={{newrelic_loglevel}}
 # Default: none. However it is highly recommended you set a value for this.
 # Note   : Can also be set with the -l command line option.
 #
-logfile={{newrelic_logfile}}
+logfile={{newrelic_sysmond_logfile}}
 
 #
 # Option : proxy
@@ -62,7 +62,7 @@ logfile={{newrelic_logfile}}
 #          to true.
 # Default: true (as of version 1.4)
 #
-ssl={{newrelic_ssl}}
+ssl={{newrelic_sysmond_ssl}}
 
 #
 # Setting: ssl_ca_bundle
@@ -102,7 +102,7 @@ ssl={{newrelic_ssl}}
 # Default: /tmp/nrsysmond.pid
 # Note   : Can also be set with the -p command line option.
 #
-#pidfile=/var/run/newrelic/nrsysmond.pid
+pidfile={{newrelic_sysmond_pidfile}}
 
 #
 # Option : collector_host
@@ -127,7 +127,7 @@ ssl={{newrelic_ssl}}
 #          once the original connection has been made. The value is in seconds.
 # Default: 30
 #
-timeout={{newrelic_timeout}}
+timeout={{newrelic_sysmond_timeout}}
 
 #
 # Option : labels
@@ -138,7 +138,7 @@ timeout={{newrelic_timeout}}
 #            labels = Environment:Production;DataCenter:EastUS;
 # Default: none
 #
-{% if newrelic_labels -%}
-labels={% for (l,v) in newrelic_labels.iteritems() %}{{l}}:{{v}};{% endfor %}
+{% if newrelic_sysmond_labels is defined and newrelic_sysmond_labels -%}
+labels={% for (l,v) in newrelic_sysmond_labels.iteritems() %}{{l}}:{{v}};{% endfor %}
 {% endif %}
 
