@@ -12,19 +12,17 @@ This ansible role installs [NewRelic Sysmond](https://newrelic.com/) client.
 
 ## Role Variables
 
-The following role variables are defined in `defaults/main.yml`, and are
-probably the only ones you will want to change. For a detailed explanation
-about them you can take a look at the file.
+The following default vars are probably the only ones that should be modified:
 
 ```
 newrelic_license_key: false
-newrelic_sysmond_loglevel: info
 newrelic_sysmond_labels: false
+newrelic_upgrade: false
 ```
 
 ## Usage
 
-The only ansible variable to be defined is actually `newrelic_license_key`. If
+The only variable taht you need to defin is actually `newrelic_license_key`. If
 this one is not defined, then the role will fail with a message.
 
 An example of the usage of this role is:
@@ -40,3 +38,4 @@ An example of the usage of this role is:
     - { role: torian.newrelic }
 ```
 
+If you need to upgrade the newrelic client, you can set to `newrelic_upgrade: true`.
