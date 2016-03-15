@@ -3,17 +3,18 @@
 - name: Repository key (Debian)
   apt_key:
     state=present
-    url="{{mr_repository_key}}"
+    url="{{newrelic_repository_key}}"
   
 - name: NewRelic Repository (Debian)
   apt_repository:
     state=present
-    repo="deb {{nr_repository}} {{ansible_distribution_release}} main"
+    repo="deb {{newrelic_repository}} newrelic non-free"
     update_cache=yes
 
 - name: Install NewRelic System Monitor (Debian)
   apt:
-    state="{{ (nr_upgrade) | ternary('latest', 'present') }}"
-    name="{{nr_packages}}"
+    state="{{ (newrelic_upgrade) | ternary('latest', 'present') }}"
+    name="{{item}}"
+  with_items: "{{newrelic_packages}}"
 
 # vi:ts=2:sw=2:et:ft=yaml
