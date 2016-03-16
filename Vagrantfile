@@ -20,6 +20,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     ubuntu.vm.provision 'ansible' do |ansible| 
       ansible.playbook = 'tests/test_vagrant.yml'
+      ansible.extra_vars = {
+        newrelic_sysmond_hostname: "ubuntu"
+      }
     end
     
   end
@@ -44,8 +47,9 @@ gpgcheck = 0
 
     centos.vm.provision 'ansible' do |ansible| 
       ansible.playbook   = 'tests/test_vagrant.yml'
-      #ansible.extra_vars = {
-      #}
+      ansible.extra_vars = {
+        newrelic_sysmond_hostname: "centos6"
+      }
     end
   end
 
@@ -69,8 +73,9 @@ gpgcheck = 0
 
     centos.vm.provision 'ansible' do |ansible| 
       ansible.playbook = 'tests/test_vagrant.yml'
-      #ansible.extra_vars = {
-      #}
+      ansible.extra_vars = {
+        newrelic_sysmond_hostname: "centos7"
+      }
     end
 
   end

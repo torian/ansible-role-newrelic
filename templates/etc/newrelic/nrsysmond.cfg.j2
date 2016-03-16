@@ -142,3 +142,7 @@ timeout={{newrelic_sysmond_timeout}}
 labels={% for (l,v) in newrelic_sysmond_labels.iteritems() %}{{l}}:{{v}};{% endfor %}
 {% endif %}
 
+{% if newrelic_sysmond_hostname is defined -%}
+hostname={{newrelic_sysmond_hostname}}
+{% endif %}
+

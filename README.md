@@ -15,9 +15,10 @@ This ansible role installs [NewRelic Sysmond](https://newrelic.com/) client.
 The following default vars are probably the only ones that should be modified:
 
 ```
+newrelic_upgrade: false
 newrelic_license_key: false
 newrelic_sysmond_labels: false
-newrelic_upgrade: false
+newrelic_sysmond_hostname: # undefined
 ```
 
 ## Usage
