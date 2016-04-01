@@ -16,7 +16,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     
     ubuntu.vm.provision 'shell', inline: 'apt-get update'
     ubuntu.vm.provision 'shell', inline: 'apt-get install -y -qq  python-pip'
-    ubuntu.vm.provision 'shell', inline: 'pip install ansible jinja2'
+    ubuntu.vm.provision 'shell', inline: 'pip install ansible==2.0.1.0 jinja2'
 
     ubuntu.vm.provision 'ansible' do |ansible| 
       ansible.playbook = 'tests/test_vagrant.yml'
@@ -27,7 +27,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     
   end
 
-  config.vm.define 'centos-6' do |centos|
+  config.vm.define 'centos-6' do |centos6|
     EPEL_REPO = '''
 [epel]
 name     = EPEL 6 - \$basearch
@@ -36,16 +36,16 @@ enabled  = 1
 gpgcheck = 0
 '''
 
-    centos.vm.box      = "puppetlabs/centos-6.6-64-nocm"
-    centos.vm.hostname = 'centos6'
+    centos6.vm.box      = "puppetlabs/centos-6.6-64-nocm"
+    centos6.vm.hostname = 'centos6'
 
-    centos.vm.provision 'shell', inline: 'yum install -y ca-certificates'
-    centos.vm.provision 'shell', inline: "echo \"#{EPEL_REPO}\" > /etc/yum.repos.d/epel.repo"
-    centos.vm.provision 'shell', inline: 'yum install -y python-pip python-devel gcc'
-    centos.vm.provision 'shell', inline: 'pip install -q pip --upgrade'
-    centos.vm.provision 'shell', inline: 'pip install -q ansible jinja2'
+    centos6.vm.provision 'shell', inline: 'yum install -y ca-certificates'
+    centos6.vm.provision 'shell', inline: "echo \"#{EPEL_REPO}\" > /etc/yum.repos.d/epel.repo"
+    centos6.vm.provision 'shell', inline: 'yum install -y python-pip python-devel gcc'
+    centos6.vm.provision 'shell', inline: 'pip install -q pip --upgrade'
+    centos6.vm.provision 'shell', inline: 'pip install -q ansible==2.0.1.0 jinja2'
 
-    centos.vm.provision 'ansible' do |ansible| 
+    centos6.vm.provision 'ansible' do |ansible| 
       ansible.playbook   = 'tests/test_vagrant.yml'
       ansible.extra_vars = {
         newrelic_sysmond_hostname: "centos6"
@@ -53,7 +53,7 @@ gpgcheck = 0
     end
   end
 
-  config.vm.define 'centos-7' do |centos|
+  config.vm.define 'centos-7' do |centos7|
     EPEL_REPO = '''
 [epel]
 name     = EPEL 7 - \$basearch
@@ -62,16 +62,16 @@ enabled  = 1
 gpgcheck = 0
 '''
 
-    centos.vm.box      = 'centos/7'
-    centos.vm.hostname = 'centos7'
+    centos7.vm.box      = 'centos/7'
+    centos7.vm.hostname = 'centos7'
 
-    centos.vm.provision 'shell', inline: 'yum install -y ca-certificates'
-    centos.vm.provision 'shell', inline: "echo \"#{EPEL_REPO}\" > /etc/yum.repos.d/epel.repo"
-    centos.vm.provision 'shell', inline: 'yum install -y python-pip python-devel gcc'
-    centos.vm.provision 'shell', inline: 'pip install -q pip --upgrade'
-    centos.vm.provision 'shell', inline: 'pip install -q ansible jinja2'
+    centos7.vm.provision 'shell', inline: 'yum install -y ca-certificates'
+    centos7.vm.provision 'shell', inline: "echo \"#{EPEL_REPO}\" > /etc/yum.repos.d/epel.repo"
+    centos7.vm.provision 'shell', inline: 'yum install -y python-pip python-devel gcc'
+    centos7.vm.provision 'shell', inline: 'pip install -q pip --upgrade'
+    centos7.vm.provision 'shell', inline: 'pip install -q ansible==2.0.1.0 jinja2'
 
-    centos.vm.provision 'ansible' do |ansible| 
+    centos7.vm.provision 'ansible' do |ansible| 
       ansible.playbook = 'tests/test_vagrant.yml'
       ansible.extra_vars = {
         newrelic_sysmond_hostname: "centos7"
