@@ -1,6 +1,7 @@
 ---
 
-newrelic_repository_pkg: "https://yum.newrelic.com/pub/newrelic/el5/x86_64/newrelic-repo-5-3.noarch.rpm"
+newrelic_repository_pkg:     "newrelic-repo-5-3.noarch.rpm"
+newrelic_repository_pkg_url: "https://yum.newrelic.com/pub/newrelic/el5/x86_64/{{newrelic_repository_pkg}}"
 
 newrelic_packages:
   - newrelic-sysmond
