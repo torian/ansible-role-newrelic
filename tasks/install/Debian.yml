@@ -4,7 +4,7 @@
   apt_key:
     state: present
     url: "{{newrelic_repository_key}}"
-  
+
 - name: NewRelic Repository (Debian)
   apt_repository:
     state: present
