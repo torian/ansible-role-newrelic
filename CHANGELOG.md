@@ -1,5 +1,9 @@
 # Changelog
 
+## 2017-03-17: 0.3.2
+
+  - Ansible lint - Fixed trailing whitespaces
+
 ## 2017-02-16: 0.3.1
 
   - fix for empty labels. If `newrelic_sysmond_labels` contains
