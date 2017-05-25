@@ -41,4 +41,29 @@ newrelic_sysmond_service_enabled: true
 #
 newrelic_upgrade: false
 
+# APM
+
+newrelic_apm_enabled: false
+
+newrelic_apm_config_file: /etc/newrelic/newrelic.ini
+
+newrelic_apm_config_defaults:
+  monitor_mode: 'true'
+  log_level: info
+  ssl: 'true'
+  high_security: 'false'
+  transaction_tracer.enabled: 'true'
+  transaction_tracer.transaction_threshold: apdex_f
+  transaction_tracer.record_sql: obfuscated
+  transaction_tracer.stack_trace_threshold: 0.5
+  transaction_tracer.explain_enabled: 'true'
+  transaction_tracer.explain_threshold: 0.5
+  transaction_tracer.function_trace: ''
+  error_collector.enabled: 'true'
+  error_collector.ignore_errors: ''
+  browser_monitoring.auto_instrument: 'true'
+  thread_profiler.enabled: 'true'
+ 
+newrelic_apm_config: {}
+
 # vi:ts=2:sw=2:et:ft=yaml

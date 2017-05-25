@@ -10,6 +10,9 @@
 - include: config.yml
   tags: newrelic_config
 
+- include: apm.yml
+  when: newrelic_apm_enabled
+
 - name: Enable newrelic sysmond
   service:
     name=newrelic-sysmond
