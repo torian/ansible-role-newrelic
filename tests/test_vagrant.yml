@@ -3,8 +3,11 @@
   become: yes
 
   vars:
-    newrelic_test: true
-    newrelic_license_key: 'abcdefghijk1234567'
+    - newrelic_test: true
+    - newrelic_license_key: 'abcdefghijk1234567'
+    - newrelic_apm_enabled: true
+    - newrelic_apm_config:
+        license_key: "{{newrelic_license_key}}"
 
   roles:
     - ansible-role-newrelic
