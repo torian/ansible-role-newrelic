@@ -21,6 +21,34 @@ newrelic_sysmond_labels: false
 newrelic_sysmond_hostname: # undefined
 ```
 
+APM settings:
+
+```
+newrelic_apm_enabled: false
+
+newrelic_apm_config_defaults:
+  monitor_mode: 'true'
+  log_level: info
+  ssl: 'true'
+  high_security: 'false'
+  transaction_tracer.enabled: 'true'
+  transaction_tracer.transaction_threshold: apdex_f
+  transaction_tracer.record_sql: obfuscated
+  transaction_tracer.stack_trace_threshold: 0.5
+  transaction_tracer.explain_enabled: 'true'
+  transaction_tracer.explain_threshold: 0.5
+  transaction_tracer.function_trace: ''
+  error_collector.enabled: 'true'
+  error_collector.ignore_errors: ''
+  browser_monitoring.auto_instrument: 'true'
+  thread_profiler.enabled: 'true'
+
+newrelic_apm_config: {}
+```
+
+The variables `newrelic_apm_config_defaults` and `newrelic_apm_config` will
+be merged using the jinja2 filter `combine()`.
+
 ## Usage
 
 The only variable taht you need to defin is actually `newrelic_license_key`. If

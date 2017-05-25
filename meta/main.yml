@@ -3,7 +3,7 @@ galaxy_info:
   author: Emiliano Castagnari
   description: Ansible role for NewRelic
   license: Apache
-  min_ansible_version: 1.8
+  min_ansible_version: 2.0
   platforms:
   - name: EL
     versions:

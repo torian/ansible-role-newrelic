@@ -1,5 +1,9 @@
 # Changelog
 
+## 2017-05-25: 0.4.0
+
+  - APM settings (vars newrelic_apm_config_defaults & newrelic_apm_config)
+
 ## 2017-03-17: 0.3.2
 
   - Ansible lint - Fixed trailing whitespaces
