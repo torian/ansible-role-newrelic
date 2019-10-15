@@ -1,11 +1,19 @@
 ---
 
+- name: New Relic Config directory
+  file:
+    state: directory
+    path: /etc/newrelic
+    owner: root
+    group: root
+    mode: "0755"
+
 - name: Configure New Relic APM
   template:
     src: etc/newrelic/newrelic.ini.j2
     dest: "{{newrelic_apm_config_file}}"
-    owner: "{{newrelic_user}}"
-    group: "{{newrelic_group}}"
-    mode: "0640"
+    owner: root
+    group: root
+    mode: "0644"
 
 # vi:ts=2:sw=2:et:ft=yaml

@@ -14,33 +14,6 @@ newrelic_license_key: false
 newrelic_user:  newrelic
 newrelic_group: newrelic
 
-# NewRelic sysmond config params
-#
-newrelic_sysmond_loglevel: info
-newrelic_sysmond_logfile:  /var/log/newrelic/nrsysmond.log
-newrelic_sysmond_ssl:      true
-newrelic_sysmond_timeout:  30
-newrelic_sysmond_pidfile:  /var/run/newrelic/nrsysmond.pid
-
-# Sysmond labels
-#  This will define labels for the host being monitored in NR dashboard
-#
-# newrelic_sysmond_labels:
-#   env:  production
-#   tier: webserver
-#
-newrelic_sysmond_labels:   false
-
-# Enable NewRelic sysmond at boot
-#
-newrelic_sysmond_service_enabled: true
-
-# NewRelic update
-#  If you want / need to upgrade the package, toggle this var
-#  to true. This should be passed as an external variable
-#
-newrelic_upgrade: false
-
 # APM
 
 newrelic_apm_enabled: false
