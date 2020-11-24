@@ -5,7 +5,7 @@
 #  should be stored securely (vault ?)
 #  If it's not defined, the role will fail
 #
-newrelic_license_key: false
+newrelic_license_key: ""
 
 # NewRelic user and group
 #  The user and group that will run the service

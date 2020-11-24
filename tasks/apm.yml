@@ -11,7 +11,7 @@
 - name: Configure New Relic APM
   template:
     src: etc/newrelic/newrelic.ini.j2
-    dest: "{{newrelic_apm_config_file}}"
+    dest: "{{ newrelic_apm_config_file }}"
     owner: root
     group: root
     mode: "0644"

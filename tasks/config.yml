@@ -3,14 +3,14 @@
 - name: License check
   fail:
     msg: "You need to define newrelic_license_key"
-  when: newrelic_license_key == False
+  when: not newrelic_license_key
 
 - name: Configure New Relic Sysmond
   template:
     src: etc/newrelic/nrsysmond.cfg.j2
     dest: /etc/newrelic/nrsysmond.cfg
-    owner: "{{newrelic_user}}"
-    group: "{{newrelic_group}}"
+    owner: "{{ newrelic_user }}"
+    group: "{{ newrelic_group }}"
     mode: "0640"
   notify: newrelic restart
 

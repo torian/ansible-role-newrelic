@@ -1,5 +1,9 @@
 # Changelog
 
+## 2020-11-24: 0.5.1
+
+  - Fix iteritems() no longer present in python 3
+
 ## 2019-10-15: 0.5.0
 
   - Removed deprecated NR Sysmond

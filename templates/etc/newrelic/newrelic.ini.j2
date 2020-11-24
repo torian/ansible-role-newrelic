@@ -2,7 +2,7 @@
 
 {% set apm_config = newrelic_apm_config_defaults|combine(newrelic_apm_config) %}
 [newrelic]
-{% for k,v in apm_config.iteritems() %}
+{% for k,v in apm_config.items() %}
 {{k}} = {{v}}
 {% endfor %}
 

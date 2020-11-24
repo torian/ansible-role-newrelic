@@ -3,13 +3,13 @@
 - name: NewRelic Yum Repository (RedHat)
   yum:
     state: present
-    name: "{{newrelic_repository_pkg_url}}"
+    name: "{{ newrelic_repository_pkg_url }}"
 
 - name: NewRelic Install Package (RedHat)
   yum:
     state: present
-    name: "{{item}}"
+    name: "{{ item }}"
     update_cache: yes
-  with_items: "{{newrelic_packages}}"
+  with_items: "{{ newrelic_packages }}"
 
 # vi:ts=2:sw=2:et:ft=yaml
